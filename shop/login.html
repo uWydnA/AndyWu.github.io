@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="libs/bootstrap.css">
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+    <style>
+        #alert {
+            opacity: 0;
+            transition: .5s linear;
+        }
+
+        .al {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: -1;
+            opacity: 1;
+            transition: .5s linear
+        }
+    </style>
+</head>
+
+<body class="text-center">
+
+    <form class="form-signin" data-dismiss="alert">
+
+        <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+        <div class="form-row">
+            <label for="account" class="sr-only">Account</label>
+            <input type="user" id="account" class="form-control" placeholder="Account" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+        </div>
+        <div class="form-row">
+            <input style="margin-bottom:-1px" type="password" id="inputPassword" class="form-control " id="pass"
+                placeholder="Password" required>
+        </div>
+        <div class="form-row">
+            <input type="text" class="form-control col-md-8" id="verifycode" placeholder="Verify" required>
+            <img src="php/photo.php" alt="..." class="img-thumbnail col-md-4" id="refresh" title="刷新验证码"
+                onclick="document.getElementById('refresh').src='php/photo.php' ">
+        </div>
+        <div class="checkbox mb-3">
+            <label style="user-select: none" id="check">
+                <input type="checkbox" value="remember-me" id="checkbtn"> 记住密码</label>
+        </div>
+        <div class="alert alert-danger" role="alert" id="alert" style="user-select: none">
+            不要在公共设备上勾选此选项!
+        </div>
+        <button class="btn btn-lg btn-primary mr-2" data-dismiss="alert" type="button" id="sign">登录</button>
+        <!-- <button class="btn btn-lg btn-success " data-dismiss="alert" type="button" id="signup">注册</button> -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-lg btn-success ml-2" data-toggle="modal" data-target="#exampleModalCenter">
+            注册
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="top:200px;">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">注册</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="signuser">帐号</label>
+                                <input type="text" class="form-control" id="signuser" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="signpass">密码</label>
+                                <input type="password" class="form-control" id="signpass">
+                            </div>
+                            <div class="form-group">
+                                <label for="signtoken">激活码</label>
+                                <input type="text" class="form-control" id="signtoken" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">如需激活码，请联系retr0</small>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="subbtn">提交</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="libs/jquery-2.2.4.js"></script>
+    <script src="libs/popper.js"></script>
+    <script src="libs/swiper.min.js"></script>
+    <script src="libs/bootstrap.js"></script>
+    <script src="js/login.js"></script>
+    <!-- <script src="js/signup.js"></script> -->
+
+</body>
+
+</html>
